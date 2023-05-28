@@ -1,9 +1,12 @@
 pipeline {
     agent any
+    tools { 
+        maven 'mavenjenkins' 
+    }
     stages {
         stage('Checkout') {
             steps {
-                git https://github.com/mickinfo/proyectosimplejunit.git
+                git 'https://github.com/mickinfo/proyectosimplejunit.git'
             }
         }
         stage('Build') {
